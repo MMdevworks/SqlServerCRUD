@@ -50,5 +50,40 @@ namespace _10._3dbCRUD
             btnSubmit.Enabled = false;
             carGrid.DataSource = crud.GetAllRecords();
         }
+        private void Clear()
+        {
+            foreach (TextBox tb in this.Controls.OfType<TextBox>())
+                tb.Text = string.Empty;
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            var id = carGrid.CurrentRow.Cells[0].Value;
+            var carToUpdate = crud.FindCar((int)id);
+            txtcarid.Text = carToUpdate.CarId.ToString();
+            txtcarid.ReadOnly = true;
+            txtvin.Text = carToUpdate.VIN;
+            txtmake.Text = carToUpdate.Make;
+            txtmodel.Text = carToUpdate.Model;
+            txtyear.Text = carToUpdate.Year.ToString();
+            txtprice.Text = carToUpdate.Price.ToString(); ;
+            btnUpdate.Enabled = true;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var id = int.Parse(txtcarid.Text);
+            var carToUpdate = crud.FindCar(id);
+            carToUpdate.VIN = txtvin.Text;
+            carToUpdate.Make = txtmake.Text;
+            carToUpdate.Model = txtmodel.Text;
+            carToUpdate.Year = int.Parse(txtyear.Text);
+            carToUpdate.Price = double.Parse(txtprice.Text);
+            crud.UpdateRecord(id, carToUpdate);
+            MessageBox.Show("Record Updated!");
+            carGrid.DataSource = crud.GetAllRecords();
+            btnUpdate.Enabled = false;
+            Clear();
+        }
     }
 }

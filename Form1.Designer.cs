@@ -182,6 +182,7 @@
             btnSelect.TabIndex = 15;
             btnSelect.Text = "Select to Update";
             btnSelect.UseVisualStyleBackColor = true;
+            btnSelect.Click += btnSelect_Click;
             // 
             // btnUpdate
             // 
@@ -191,6 +192,7 @@
             btnUpdate.TabIndex = 16;
             btnUpdate.Text = "Update Record";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnRefresh
             // 
