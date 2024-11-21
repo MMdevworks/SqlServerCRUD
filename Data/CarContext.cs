@@ -20,9 +20,9 @@ namespace _10._3dbCRUD.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Car>().HasData(
-                new Car { VIN = "VA00900", Make = "Toyota", Model = "MR2" , Price = 12200 , Year = 1988 },
-                new Car { VIN = "VA36500", Make = "Jeep", Model = "Wrangler" , Price = 75099 , Year = 2024 },
-                new Car { VIN = "VR80508", Make = "Toyota", Model = "Rav4" , Price = 27899 , Year = 2012 }
+                new Car { CarId = 1, VIN = "VA00900", Make = "Toyota", Model = "MR2" , Price = 12200 , Year = 1988 },
+                new Car { CarId = 2, VIN = "VA36500", Make = "Jeep", Model = "Wrangler" , Price = 75099 , Year = 2024 },
+                new Car { CarId = 3, VIN = "VR80508", Make = "Toyota", Model = "Rav4" , Price = 27899 , Year = 2012 }
                 );
 
         }
