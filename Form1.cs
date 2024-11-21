@@ -85,5 +85,13 @@ namespace _10._3dbCRUD
             btnUpdate.Enabled = false;
             Clear();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var id = carGrid.CurrentRow.Cells[0].Value;
+            crud.DeleteRecord((int)id);
+            MessageBox.Show("Record Deleted!");
+            carGrid.DataSource = crud.GetAllRecords();
+        }
     }
 }

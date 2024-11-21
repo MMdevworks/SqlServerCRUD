@@ -45,7 +45,6 @@
             btnSubmit = new Button();
             btnSelect = new Button();
             btnUpdate = new Button();
-            btnRefresh = new Button();
             btnDelete = new Button();
             ((System.ComponentModel.ISupportInitialize)carGrid).BeginInit();
             SuspendLayout();
@@ -194,23 +193,15 @@
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_Click;
             // 
-            // btnRefresh
-            // 
-            btnRefresh.Location = new Point(606, 253);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(75, 23);
-            btnRefresh.TabIndex = 17;
-            btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(606, 289);
+            btnDelete.Location = new Point(607, 253);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
             btnDelete.TabIndex = 18;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 
@@ -218,7 +209,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnDelete);
-            Controls.Add(btnRefresh);
             Controls.Add(btnUpdate);
             Controls.Add(btnSelect);
             Controls.Add(btnSubmit);
@@ -263,7 +253,6 @@
         private Button btnSubmit;
         private Button btnSelect;
         private Button btnUpdate;
-        private Button btnRefresh;
         private Button btnDelete;
     }
 }
