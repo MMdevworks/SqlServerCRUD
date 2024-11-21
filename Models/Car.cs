@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _10._3dbCRUD.Models
 {
-    public class Cars
+    public class Car
     {
         public string VIN { get; set; }
         public string Make { get; set; }
