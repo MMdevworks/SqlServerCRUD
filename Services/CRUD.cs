@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,27 +22,30 @@ namespace _10._3dbCRUD.Services
     {
         public void AddRecord(Car car)
         {
-            throw new NotImplementedException();
+            Data.Data.carContext.Cars.Add(car);
+            Data.Data.carContext.SaveChanges();
         }
 
         public void DeleteRecord(int carId)
         {
-            throw new NotImplementedException();
+            var car = Data.Data.carContext.Cars.Find(carId);
+            Data.Data.carContext.Cars.Remove(car);
+            Data.Data.carContext.SaveChanges();
         }
 
         public Car FindCar(int id)
         {
-            throw new NotImplementedException();
+            return Data.Data.carContext.Cars.Find(id);
         }
 
         public ICollection<Car> GetAllRecords()
         {
-            throw new NotImplementedException();
+            return Data.Data.carContext.Cars.ToList();
         }
 
         public int GetMaxId()
         {
-            throw new NotImplementedException();
+            return Data.Data.carContext.Cars.Max(e => e.CarId);
         }
 
         public void UpdateRecord(int carId, Car car)
