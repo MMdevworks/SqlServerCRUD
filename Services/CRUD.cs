@@ -50,7 +50,14 @@ namespace _10._3dbCRUD.Services
 
         public void UpdateRecord(int carId, Car car)
         {
-            throw new NotImplementedException();
+            var carToUpdate = Data.Data.carContext.Cars.Find(carId);
+            carToUpdate.CarId = car.CarId;
+            carToUpdate.VIN = car.VIN;
+            carToUpdate.Make = car.Make;
+            carToUpdate.Model = car.Model;
+            carToUpdate.Year = car.Year;
+            carToUpdate.Price = car.Price;
+            Data.Data.carContext.SaveChanges();
         }
     }
 }
