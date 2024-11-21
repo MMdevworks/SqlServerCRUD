@@ -44,6 +44,8 @@ namespace _10._3dbCRUD
                 newcar.Model = txtmodel.Text;
                 newcar.Year = int.Parse(txtyear.Text);
                 newcar.Price = double.Parse(txtprice.Text);
+                crud.AddRecord(newcar);
+                MessageBox.Show("Record Added!");
             }
             btnSubmit.Enabled = false;
             carGrid.DataSource = crud.GetAllRecords();
